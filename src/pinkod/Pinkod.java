@@ -6,9 +6,9 @@ public class Pinkod {
 
     final static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
+    public Pinkod() {
         int kod = bekeres();
-        megadas(kod);
+        Belepes b = new Belepes(kod);
     }
 
     private static int bekeres() {
@@ -22,24 +22,6 @@ public class Pinkod {
         int pinkod = Integer.parseInt(kod);
         System.out.println("pin elmentve!");
         return pinkod;
-    }
-
-    private static void megadas(int kod) {
-        int i = 1;
-        System.out.print("kérem a belépési kódot(" + i + "/3): ");
-        int belepes = sc.nextInt();
-        while (i < 3 && belepes != kod) {
-            System.out.println("Hibás pin kód!");
-            i++;
-            System.out.print("kérem a belépési kódot(" + i + "/3): ");
-            belepes = sc.nextInt();
-        }
-        if (belepes == kod) {
-            System.out.println("Rendben, sikeres belépés!");
-        } else {
-            System.out.println("Hibás pin kód!");
-            System.out.println("Belépés megtagadva!");
-        }
     }
 
 }
